@@ -7,7 +7,7 @@
 #include <cstdlib>
 
 // For MySQL Connection
-#include <mysql.h>
+#include <mysql/mysql.h>
 
 // Defining Constants 
 #define SERVER "localhost"
@@ -21,9 +21,9 @@ class MysqlHandler
 		MYSQL *connection;			
 
 	public:
-		connect(char *Server, char *user, char *pass, char *db_name);
-		close();
-		executeSQL(char* sql);
+		int connect(char *Server, char *user, char *pass, char *db_name);
+		MYSQL_RES executeSQL(char* sql);
+		int close();
 }; 
 
-#endif
+#endif	

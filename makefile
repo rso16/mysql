@@ -1,8 +1,10 @@
-OBJS = bin/main.o bin/mysqlHandler.o
-CC = gcc
-CFLAGS = -Wall -c
-LFLAGS = -Wall
+OBJS = bin/main.o bin/MysqlHandler.o
+CC = g++ 
+CFLAGS = -Wall -c -lstdc++  -Wall -O2 -L/usr/lib/mysql/ -lmysqlclient 
+LFLAGS = -Wall -I/usr/include/mysql++ -I/usr/include/mysql -L/usr/lib/x86_64-linux-gnu -lmysqlclient -lpthread -lz -lm -lrt -latomic -ldl
+
 NAME = bin/mysqlHandler
+
 
 
 all: $(OBJS)
