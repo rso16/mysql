@@ -1,19 +1,8 @@
 // Include Header Files
-#include <iostream>
-#include <cstdio>
-#include <cstdlib>
-
-// For MySQL Connection
-#include <mysql.h>
+#include "MysqlHandler.h"
 
 using namespace std;
 
-// Defining Constant Variables
-#define SERVER "localhost"
-//#define SERVER "192.168.0.100"
-#define USER "Epaper"
-#define PASSWORD "Display"
-#define DATABASE "windesheim"
 
 int main()
 {
