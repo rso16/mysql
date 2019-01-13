@@ -7,13 +7,13 @@
 #include <cstdlib>
 
 // For MySQL Connection
-#include <mysql/mysql.h>
+#include <mysql.h> 
 
 // Defining Constants 
 #define SERVER "localhost"
-#define USER "Epaper"
+#define USER "root"
 #define PASSWORD "Display"
-#define DATABASE "windesheim"
+#define DATABASE "mysql"
 
 class MysqlHandler
 {
