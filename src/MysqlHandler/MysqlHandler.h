@@ -13,7 +13,7 @@
 #define SERVER "localhost"
 #define USER "root"
 #define PASSWORD "Display"
-#define DATABASE "mysql"
+#define DATABASE "test_db"
 
 class MysqlHandler
 {

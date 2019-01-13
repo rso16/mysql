@@ -13,7 +13,7 @@ run: all
 	sudo $(NAME)
 clean : 
 	\rm bin/*.o $(NAME)
-bin/main.o : src/main.cpp src/MysqlHandler/MysqlHandler.h /usr/include/mysql/mysql.h  
+bin/main.o : src/main.cpp src/MysqlHandler/MysqlHandler.h 
 	$(CC) $(CFLAGS) src/main.cpp -o bin/main.o
-bin/MysqlHandler.o : src/MysqlHandler/MysqlHandler.cpp src/MysqlHandler/MysqlHandler.h  /usr/include/mysql/mysql.h
+bin/MysqlHandler.o : src/MysqlHandler/MysqlHandler.cpp src/MysqlHandler/MysqlHandler.h  
 	$(CC) $(CFLAGS) $(LFLAGS) src/MysqlHandler/MysqlHandler.cpp -o bin/MysqlHandler.o

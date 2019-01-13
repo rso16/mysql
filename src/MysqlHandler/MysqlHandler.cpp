@@ -33,7 +33,7 @@ MYSQL_RES MysqlHandler::executeSQL(char* sql)
 
 	// Replace MySQL query with your query
 
-	mysql_query (connection,"show tables");
+	mysql_query (connection,"select * from test_table");
 
 	unsigned int i=0;
 
@@ -45,7 +45,7 @@ MYSQL_RES MysqlHandler::executeSQL(char* sql)
 
 	while (((row=mysql_fetch_row(res_set)) !=NULL))
 	{
-	cout << row[i] << endl;
+		printf("id = %s, name = %s\n", row[i], row[i+1]);	
 	}
 	return *res_set;
 }
