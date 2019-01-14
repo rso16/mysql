@@ -11,9 +11,9 @@
 
 // Defining Constants 
 #define SERVER "localhost"
-#define USER "root"
+#define USER "Epaper"
 #define PASSWORD "Display"
-#define DATABASE "test_db"
+#define DATABASE "Test"
 
 class MysqlHandler
 {
@@ -21,8 +21,9 @@ class MysqlHandler
 		MYSQL *connection;			
 
 	public:
-		int connect(char *Server, char *user, char *pass, char *db_name);
+		int connect(char *server, char *user, char *pass, char *db_name);
 		MYSQL_RES executeSQL(char* sql);
+		int printMysqlRes(MYSQL_RES res_set);
 		int close();
 }; 
 
