@@ -20,7 +20,8 @@ MysqlHandler mysql;
 int main(int argc, char **argv)
 {
 	mysql.connect(SERVER,USER,PASSWORD,DATABASE);
-	mysql.executeSQL("show Table");
+	MYSQL_RES res = mysql.executeSQL("show Table");
+	mysql.printMysqlRes(&res);
 	mysql.close();				
 }
 
