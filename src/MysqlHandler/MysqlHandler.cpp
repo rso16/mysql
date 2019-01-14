@@ -29,26 +29,27 @@ int MysqlHandler::connect(char *server, char *user, char *pass, char *db_name)
 MYSQL_RES MysqlHandler::executeSQL(char* sql)
 {
 	MYSQL_RES *res_set;
-	MYSQL_ROW row;
 
 	// Replace MySQL query with your query
 
-	mysql_query (connection,"select * from test");
+	mysql_query (connection,"select * from test_table");
 
 	res_set=mysql_store_result(connection);
 
+	return *res_set;
 }
 
-int MysqlHandler::printMysqlRes(MYSQL_RES res_set)
+int MysqlHandler::printMysqlRes(MYSQL_RES *res_set)
 {
 	unsigned int numrows = mysql_num_rows(res_set);
 	unsigned int i=0;
+	MYSQL_ROW row;
 
 	while (((row=mysql_fetch_row(res_set)) !=NULL))
 	{
 		printf("id = %s, name = %s\n", row[i], row[i+1]);	
 	}
-	return *res_set;
+	return 1;
 }
 
 int MysqlHandler::close()
