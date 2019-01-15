@@ -9,7 +9,7 @@
 
 //defines
 #define BEGIN_OF_MAC 0
-#define MAC_SIZE 20 
+#define MAC_SIZE 17 
 
 class ECDH
 {
