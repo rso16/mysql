@@ -35,19 +35,21 @@ MYSQL_RES MysqlHandler::executeSQL(char* sql)
 	mysql_query (connection, sql);
 
 	res_set=mysql_store_result(connection);
-
 	return *res_set;
 }
 
 int MysqlHandler::printMysqlRes(MYSQL_RES *res_set)
 {
 	unsigned int numrows = mysql_num_rows(res_set);
-	unsigned int i=0;
 	MYSQL_ROW row;
-
+	int numOfFields = mysql_num_fields(res_set);
 	while (((row=mysql_fetch_row(res_set)) !=NULL))
 	{
-		printf("id = %s, name = %s\n", row[i], row[i+1]);	
+		for(int i = 0; i < numOfFields; i++)
+		{
+			printf("%s, ", row[i]);	
+		}
+		printf("\n");
 	}
 	return 1;
 }
