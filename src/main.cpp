@@ -26,11 +26,10 @@ DC:4F:22:46:57:C3;167
 
 int main(int argc, char **argv)
 {
-	printf("mac = %s\n", eHandler.getMAC("DC:4F:22:46:57:C3;167"));	
-	
-	mHandler.connect(SERVER,USER,PASSWORD,DATABASE);
-	MYSQL_RES res = mHandler.executeSQL("select * from test_table");
-	mHandler.printMysqlRes(&res);
-	mHandler.close();				
+	char *mac = eHandler.getMAC("DC:4F:22:46:57:C3;167");	
+	printf("mac = %s\n", mac);	
+		
+	eHandler.getRoomId(mac);
+	return 0;				
 }
 

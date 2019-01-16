@@ -6,10 +6,14 @@
 
 //includes
 #include "../node/node.h"
+#include "../MysqlHandler/MysqlHandler.h"
 
 //defines
 #define BEGIN_OF_MAC 0
-#define MAC_SIZE 17 
+#define MAC_SIZE 17
+#define SQL_SIZE 53
+#define SQL_STM "select RID from boards where MAC = "
+
 
 class ECDH
 {
@@ -17,7 +21,7 @@ class ECDH
 
 	public:
 		char* getMAC(char *serverRequest);
-		char* getClassRoomId(char *MAC);
+		char* getRoomId(char *MAC);
 		
 };
 

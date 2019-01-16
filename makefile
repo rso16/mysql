@@ -19,6 +19,6 @@ bin/MysqlHandler.o : src/MysqlHandler/MysqlHandler.cpp src/MysqlHandler/MysqlHan
 	$(CC) $(CFLAGS) $(LFLAGS) src/MysqlHandler/MysqlHandler.cpp -o bin/MysqlHandler.o
 bin/node.o : src/node/node.c src/node/node.h  
 	$(CC) $(CFLAGS) $(LFLAGS) src/node/node.c -o bin/node.o
-bin/ECDH.o : src/ECDH/ECDH.cpp src/ECDH/ECDH.h src/node/node.h    
+bin/ECDH.o : src/ECDH/ECDH.cpp src/ECDH/ECDH.h src/node/node.h src/MysqlHandler/MysqlHandler.h  
 	$(CC) $(CFLAGS) $(LFLAGS) src/ECDH/ECDH.cpp -o bin/ECDH.o
 

@@ -1,5 +1,5 @@
 #ifndef MYSQLHANDLER_H
-#define MYSQHANDLER_H
+#define MYSQLHANDLER_H
 
 //includes
 #include <iostream>
@@ -9,7 +9,7 @@
 // For MySQL Connection
 #include <mysql.h> 
 
-// Defining Constants
+// Defining 
 #define PI_BOX 0
 #define U_BOX 1
 #define BOX U_BOX
