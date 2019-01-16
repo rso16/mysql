@@ -14,8 +14,8 @@ char* ECDH::getRoomId(char *MAC)
 {
 	MysqlHandler mHandler;
 	char *sqlStm = (char*) malloc(sizeof(char) * SQL_SIZE); 	
-	//sprintf(sqlStm, "%s%s", SQL_STM, MAC);
-	printf("executing the following sql statement : %s", sqlStm);	
+	sprintf(sqlStm, "%s'%s'", SQL_STM, MAC);
+	printf("executing the following sql statement : %s\n", sqlStm);	
 	mHandler.connect(SERVER,USER,PASSWORD,DATABASE);
 	MYSQL_RES res = mHandler.executeSQL(sqlStm);
 	mHandler.printMysqlRes(&res);

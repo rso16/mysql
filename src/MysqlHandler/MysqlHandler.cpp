@@ -33,7 +33,6 @@ MYSQL_RES MysqlHandler::executeSQL(char* sql)
 	// Replace MySQL query with your query
 
 	mysql_query (connection, sql);
-
 	res_set=mysql_store_result(connection);
 	return *res_set;
 }
